@@ -24,7 +24,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> homeInitialEvent(
       HomeInitialEvent event, Emitter<HomeState> emit) async {
     emit(HomeloadingState());
-    await Future.delayed(Duration(seconds: 0));
+    await Future.delayed(Duration(seconds: 3));
 
     emit(HomeLoadedSuccessState(GroceryProducts.groceryItems
         .map((e) => ProductDataModel(
